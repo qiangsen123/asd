@@ -1,0 +1,89 @@
+Keys = {
+    ['ESC'] = 322, ['F1'] = 288, ['F2'] = 289, ['F3'] = 170, ['F5'] = 166, ['F6'] = 167, ['F7'] = 168, ['F8'] = 169, ['F9'] = 56, ['F10'] = 57,['~'] = 243, ['1'] = 157, ['2'] = 158, ['3'] = 160, ['4'] = 164, ['5'] = 165, ['6'] = 159, ['7'] = 161, ['8'] = 162, ['9'] = 163, ['-'] = 84, ['='] = 83, ['BACKSPACE'] = 177,['TAB'] = 37, ['Q'] = 44, ['W'] = 32, ['E'] = 38, ['R'] = 45, ['T'] = 245, ['Y'] = 246, ['U'] = 303, ['P'] = 199, ['['] = 39, [']'] = 40, ['ENTER'] = 18,['CAPS'] = 137, ['A'] = 34, ['S'] = 8, ['D'] = 9, ['F'] = 23, ['G'] = 47, ['H'] = 74, ['K'] = 311, ['L'] = 182,['LEFTSHIFT'] = 21, ['Z'] = 20, ['X'] = 73, ['C'] = 26, ['V'] = 0, ['B'] = 29, ['N'] = 249, ['M'] = 244, [','] = 82, ['.'] = 81,['LEFTCTRL'] = 36, ['LEFTALT'] = 19, ['SPACE'] = 22, ['RIGHTCTRL'] = 70,['HOME'] = 213, ['PAGEUP'] = 10, ['PAGEDOWN'] = 11, ['DEL'] = 178,['LEFT'] = 174, ['RIGHT'] = 175, ['TOP'] = 27, ['DOWN'] = 173,
+}
+
+Config = {}
+
+---QBCore
+--Config.Notify = function(text,time,type) QBCore.Functions.Notify(text,time,type) end 
+---ESX 
+Config.Notify = function(text,time,type) ESX.ShowNotification(text,time,type) end 
+
+Config.Progress = function(text,time) exports['BCall_progress']:muestra(text,time) end 
+
+
+Config.Framework = 'ESX'               -- 'ESX' or 'QBCORE'
+
+Config.ESXTrigger = 'esx:getSharedObject'
+
+Config.QBTrigger = "exports['qb-core']:GetSharedObject"
+
+Config.alertpolice = true                 -- Enable police alert
+
+Config.police = 0                         -- minimum police necessary to sell
+
+Config.Steal = true                       -- True if you want npc's to be able to steal
+
+
+
+Config.ItemData = {
+
+    ['Data'] = {
+
+        [1] = { 
+
+            Pricerandom = false,           -- true -> The amount of money will be random with a maximum you set in "Priceitem".| false ->The amount of money will be the amount you set in "Priceitem". 
+            Priceitem = 1500,             -- Max Price item
+            Item = 'weed',                -- Name item
+            Type = 'black_money',         -- Cash, black_money, bank...etc
+            KeySell = Keys["7"],          -- Key for sell drugs
+            TimeSell = 8000,              -- Time for sell drugs
+            Probabilitycallpolice = 10,   -- Change the probability of calling the police. It represents right now 1 chance in 10 (1/10) the bigger the number, the less chance it will have.
+            RobProbability = 50,          -- Change the probability of an NPC stealing from a user. It represents right now 1 chance in 50 (1/50) the bigger the number, the less chance it will have.
+
+        },
+
+        [2] = {    
+
+            Pricerandom = false,
+            Priceitem = 1500,
+            Item = 'coke',
+            Type = 'black_money',
+            KeySell = Keys["8"],
+            TimeSell = 8000,
+            Probabilitycallpolice = 10,
+            RobProbability = 50,
+        },
+
+        [3] = {        
+
+            Pricerandom = false,
+            Priceitem = 1500,
+            Item = 'meth',
+            Type = 'black_money',
+            KeySell = Keys["5"],
+            TimeSell = 8000,
+            Probabilitycallpolice = 10,
+            RobProbability = 50,
+        },
+    },
+}
+
+
+
+Config.Language = {
+    [1] = "Has sold weed",
+    [2] = "Has sold coke",
+    [14] = "Has sold meth",
+    [3] = "There is a person using drugs in the area, we have marked the point on your gps!",
+    [4] = "Illegal sale",
+    [5] = "I have called the police and they are coming here...",
+    [6] = "You have been robbed ",
+    [7] = "¿Hey what do you want?",
+    [8] = "<p>[7] - Sell Weed</p><p>[8] - Sell coke</p><p>[5] - Sell Meth</p></span>",
+    [9] = "Is that why you bother me?",
+    [11] = "Selling drugs",
+    [12] = "Selling drugs2",
+    [13] = "Selling drugs3",
+
+}
